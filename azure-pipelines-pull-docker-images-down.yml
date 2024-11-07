@@ -17,6 +17,6 @@ steps:
  - task: PythonScript@0
    inputs:
     scriptSource: 'filePath'
-    scriptPath: 'scripts/hello_world.py'
+    scriptPath: 'scripts/pull_images.py'
     workingDirectory: '$(Build.SourcesDirectory)/scripts'
     failOnStderr: true
