@@ -1,0 +1,22 @@
+trigger:
+ - main
+
+pool:
+   vmImage: 'ubuntu-latest' 
+
+variables:
+   imageName: 'pipelines-javascript-docker'
+
+steps:
+ - task: Docker@2
+   displayName: Build an image
+   inputs:
+     repository: $(imageName)
+     command: build
+     Dockerfile: app/Dockerfile
+ - task: PythonScript@0
+   inputs:
+    scriptSource: 'filePath'
+    scriptPath: 'scripts/hello_world.py'
+    workingDirectory: '$(Build.SourcesDirectory)/scripts'
+    failOnStderr: true
