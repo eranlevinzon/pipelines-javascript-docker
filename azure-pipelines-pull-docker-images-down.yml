@@ -17,6 +17,6 @@ steps:
  - task: PythonScript@0
    inputs:
     scriptSource: 'filePath'
-    scriptPath: 'scripts/pull_images.py'
+    scriptPath: 'scripts/pull_docker_images_2.py'
     workingDirectory: '$(Build.SourcesDirectory)/scripts'
     failOnStderr: true
